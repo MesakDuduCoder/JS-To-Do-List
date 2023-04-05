@@ -1,0 +1,97 @@
+body {
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  background: #f1f2f5;
+  text-align: center;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+.list {
+  margin-left: 50px;
+  padding-inline-start: 0;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  max-width: 500px;
+  width: 100%;
+  float: left;
+}
+
+.list-item {
+  list-style: none;
+  padding: 10px 10px;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+}
+
+.list-item-2 {
+  list-style: none;
+  padding: 10px 10px;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+}
+
+.task-item {
+  margin-left: 10px;
+}
+
+.add-task {
+  height: 45px;
+  width: 400px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+.add-task:focus {
+  outline: none;
+}
+
+#demo {
+  opacity: 0.5;
+}
+
+#reload {
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.move-item {
+  margin-left: auto;
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.todo {
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.remove {
+  width: 200px;
+  height: 45px;
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+
+.remove:hover,
+.remove:focus {
+  opacity: 1;
+  text-decoration: underline;
+}
