@@ -1,20 +1,28 @@
 body {
   font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
-  background: #f1f2f5;
+  background: lightgray;
   text-align: center;
   font-weight: 300;
   box-sizing: border-box;
 }
 
-.list {
+.List {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
   margin-left: 50px;
+  float: left;
+}
+
+.list {
   padding-inline-start: 0;
   box-sizing: border-box;
   border-radius: 3px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
-  max-width: 500px;
   width: 100%;
-  float: left;
+  display: none;
+  margin: 0;
 }
 
 .list-item {
@@ -37,11 +45,15 @@ body {
   align-items: center;
 }
 
+#Add-to-list {
+  padding: 0 10px;
+}
+
 .task-item {
   margin-left: 10px;
 }
 
-.add-task {
+#add-task {
   height: 45px;
   width: 400px;
   border-top-style: hidden;
@@ -50,7 +62,7 @@ body {
   border-bottom-style: hidden;
 }
 
-.add-task:focus {
+#add-task:focus {
   outline: none;
 }
 
@@ -67,7 +79,6 @@ body {
 }
 
 .move-item {
-  margin-left: auto;
   border: none;
   height: 40px;
   width: 40px;
@@ -75,10 +86,26 @@ body {
   opacity: 0.5;
 }
 
+.submit-task {
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  opacity: 0.5;
+  margin-left: auto;
+}
+
 .todo {
   border: none;
   background-color: transparent;
   opacity: 0.5;
+}
+
+.delete-item {
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+  margin-left: auto;
 }
 
 .remove {
