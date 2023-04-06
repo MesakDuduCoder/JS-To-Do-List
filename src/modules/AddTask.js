@@ -32,10 +32,10 @@ export const display = () => {
       listItem.className = 'list-item';
       const completed = document.createElement('button');
       completed.className = 'todo';
-      function myFunction() {
+      const toogleFunction = () => {
         listItem.classList.toggle('completed');
-      }
-      completed.onclick = myFunction;
+      };
+      completed.onclick = toogleFunction;
       completed.innerHTML = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg"><path d="M7,5C5.897,5,5,5.897,5,7v10c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V7c0-1.103-0.897-2-2-2H7z M7,17V7h10l0.002,10H7z"></path></svg>';
 
       const description = document.createElement('span');
