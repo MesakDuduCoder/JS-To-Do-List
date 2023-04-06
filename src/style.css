@@ -6,6 +6,11 @@ body {
   box-sizing: border-box;
 }
 
+input,
+input::placeholder {
+  font: 20px/3 sans-serif;
+}
+
 .List {
   display: flex;
   flex-direction: column;
@@ -68,6 +73,8 @@ body {
 }
 
 #demo {
+  font-size: 1.3rem;
+  font-weight: 700;
   opacity: 0.5;
 }
 
@@ -87,7 +94,7 @@ body {
   opacity: 0.5;
 }
 
-.submit-task {
+#submit-task {
   border: none;
   height: 40px;
   width: 40px;
@@ -112,17 +119,24 @@ body {
   border: none;
   background-color: transparent;
   opacity: 0.5;
+  padding: 0;
+}
+
+.edit-btn > svg {
+  margin: 5px;
 }
 
 .edit-btn-save {
   border: none;
   background-color: transparent;
   opacity: 0.5;
+  padding: 0;
 }
 
 .edit-btn-save > p {
   font-weight: 900;
   font-size: 1rem;
+  margin: 0;
 }
 
 .remove {
@@ -132,6 +146,7 @@ body {
   background-color: transparent;
   opacity: 0.5;
   font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .remove:hover,
