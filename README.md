@@ -77,6 +77,7 @@
 - **[webpack_bundler]**
 - **[add_to_do_items]**
 - **[remove_to_do_items]**
+- **[edit_to_do_items]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

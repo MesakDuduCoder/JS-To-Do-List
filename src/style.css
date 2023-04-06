@@ -120,6 +120,11 @@ body {
   opacity: 0.5;
 }
 
+.edit-btn-save > p {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
 .remove {
   width: 200px;
   height: 45px;
