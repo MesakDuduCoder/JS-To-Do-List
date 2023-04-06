@@ -4,6 +4,10 @@ body {
   text-align: center;
   font-weight: 300;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 input,
@@ -17,7 +21,6 @@ input::placeholder {
   max-width: 500px;
   width: 100%;
   margin-left: 50px;
-  float: left;
 }
 
 .list {
