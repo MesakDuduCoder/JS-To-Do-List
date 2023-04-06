@@ -51,6 +51,7 @@ body {
 
 .task-item {
   margin-left: 10px;
+  font-size: 1.2rem;
 }
 
 #add-task {
@@ -105,7 +106,18 @@ body {
   border: none;
   background-color: transparent;
   opacity: 0.5;
-  margin-left: auto;
+}
+
+.edit-btn {
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.edit-btn-save {
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
 }
 
 .remove {
@@ -121,4 +133,18 @@ body {
 .remove:focus {
   opacity: 1;
   text-decoration: underline;
+}
+
+#edit {
+  height: 45px;
+  width: 400px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  font-size: 1.2rem;
+}
+
+#edit:focus {
+  outline: none;
 }
