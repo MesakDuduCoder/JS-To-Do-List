@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 import './modules/AddTask.js';
+import { clearTasks } from './modules/Checkbox.js';
 
 function component() {
   const demo = document.getElementById('Demo');
@@ -24,9 +25,13 @@ function component() {
   addTask.style = 'padding: 0 10px;';
 
   const remove = document.getElementById('Remove');
+  const clearCompleted = document.createElement('button');
+  clearCompleted.id = 'remove';
+  clearCompleted.innerHTML = 'Clear all completed';
+  clearCompleted.onclick = clearTasks;
   remove.className = 'list-item-2';
-  remove.innerHTML = '<button class="remove">Clear all completed</button>';
   remove.style = 'justify-content: center';
+  remove.appendChild(clearCompleted);
 }
 
 document.body.appendChild(component());

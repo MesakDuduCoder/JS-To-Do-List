@@ -73,11 +73,9 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[show_to_do_items]**
-- **[webpack_bundler]**
-- **[add_to_do_items]**
-- **[remove_to_do_items]**
 - **[edit_to_do_items]**
+- **[check_completed_task]**
+- **[remove_all_completed_task]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -146,7 +144,6 @@ type and run command on terminal on root of project folder: npm start
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[interactive_to_do_list]**
 - [ ] **[arrange_to_do_items]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
