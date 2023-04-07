@@ -75,6 +75,10 @@
 
 - **[show_to_do_items]**
 - **[webpack_bundler]**
+- **[add_to_do_items]**
+- **[remove_to_do_items]**
+- **[edit_to_do_items]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,8 +146,7 @@ type and run command on terminal on root of project folder: npm start
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[add_to_do_item]**
-- [ ] **[remove_to_do_item]**
+- [ ] **[interactive_to_do_list]**
 - [ ] **[arrange_to_do_items]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
