@@ -142,7 +142,7 @@ input::placeholder {
   margin: 0;
 }
 
-.remove {
+#remove {
   width: 200px;
   height: 45px;
   border: none;
@@ -152,8 +152,8 @@ input::placeholder {
   font-weight: 700;
 }
 
-.remove:hover,
-.remove:focus {
+#remove:hover,
+#remove:focus {
   opacity: 1;
   text-decoration: underline;
 }
