@@ -87,14 +87,16 @@ export const display = () => {
       editBtn.onclick = editItemClick;
       editBtnSave.onclick = editItemSave;
 
-      const deleteItem = document.createElement('button');
-      deleteItem.className = 'delete-item';
-      deleteItem.innerHTML = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg"><path d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-200 0H360v-72h304v72z"></path></svg>';
-      deleteItem.addEventListener('click', (e) => {
+      const deleteTask = () => {
         tasks.splice(indexNo, 1);
         set(tasks);
         display();
-      });
+      };
+
+      const deleteItem = document.createElement('button');
+      deleteItem.className = 'delete-item';
+      deleteItem.innerHTML = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg"><path d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-200 0H360v-72h304v72z"></path></svg>';
+      deleteItem.addEventListener('click', (e) => deleteTask());
 
       const move = document.createElement('button');
       move.className = 'move-item';
@@ -114,30 +116,27 @@ export const display = () => {
 window.addEventListener('DOMContentLoaded', (e) => {
   display();
   const form = document.getElementById('add-task-form');
-  const taskInput = document.getElementById('add-task');
 
-  form.addEventListener('submit', (e) => {
+  const addTask = () => {
     e.preventDefault();
+    const taskInput = document.getElementById('add-task');
     const completed = false;
     const index = tasks.length;
     const description = taskInput.value;
     const task = new Task(description, completed, index);
     tasks.push(task);
     taskInput.value = '';
+  };
+
+  const saveTask = () => {
     set(tasks);
     display();
-  });
+  };
+
+  form.addEventListener('submit', (e) => addTask());
+  form.addEventListener('submit', (e) => saveTask());
 
   const enter = document.querySelector('#submit-task');
-  enter.addEventListener('click', (e) => {
-    e.preventDefault();
-    const completed = false;
-    const index = tasks.length;
-    const description = taskInput.value;
-    const task = new Task(description, completed, index);
-    tasks.push(task);
-    taskInput.value = '';
-    set(tasks);
-    display();
-  });
+  enter.addEventListener('click', (e) => addTask());
+  enter.addEventListener('click', (e) => saveTask());
 });
