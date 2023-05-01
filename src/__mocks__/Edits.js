@@ -28,8 +28,8 @@ const checkTaskDone = (arg) => {
   if (done === 'uncompleted') {
     tasks.forEach((taskItem) => {
       if (taskItem.description === items) {
-        localStorage.setItem('toDoList', JSON.stringify(tasks));
         result = false;
+        localStorage.setItem('toDoList', JSON.stringify(tasks));
       }
     });
   }

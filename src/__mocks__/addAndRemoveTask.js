@@ -1,7 +1,7 @@
-const addTask = (description) => {
+const addTask = (item) => {
   const tasks = [];
   tasks.push({
-    description,
+    description: item,
     completed: false,
     index: tasks.length,
   });
