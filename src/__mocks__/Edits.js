@@ -26,9 +26,67 @@ const saveEdit = (item) => {
   return result;
 };
 
+const checkTaskDone = (arg) => {
+  let tasks = [
+    {
+      description: "dog",
+      completed: false,
+      index: 0
+    },
+    {
+      description: "cat",
+      completed: true,
+      index: 1
+    },
+  ];
+  const description = arg.description;
+  const status = arg.status;
+  let result = '';
 
+  if (status === "completed") {
+    tasks.forEach((taskItem) => {
+      if (taskItem.description === description) {
+        result = 'uncompleted';
+        saveToStorage(tasks);
+      }
+    });
+  }
 
+  if (status === "uncompleted") {
+    tasks.forEach((taskItem) => {
+      if (taskItem.description === description) {
+        result = "completed";
+        saveToStorage(tasks);
+      }
+    });
+  }
 
+  return result;
+};
+
+const clearTasks = () => {
+  let tasks = [
+    {
+      description: "dog",
+      completed: false,
+      index: 0,
+    },
+    {
+      description: "cat",
+      completed: true,
+      index: 1,
+    },
+  ];
+  const newTasks = tasks.filter((item) => item.completed === false);
+  saveToStorage(newTasks);
+  return {
+    filtered: newTasks.length,
+    list: tasks.length,
+  };
+};
+
+exports.checkTaskDone = checkTaskDone;
+exports.clearTasks = clearTasks;
 exports.editItem = editItem;
 exports.saveEdit = saveEdit;
 
