@@ -21,4 +21,14 @@ describe('add items to Todo', () => {
     expect(setItemSpy).toHaveBeenCalled();
   });
 
+  it('Remove Item', () => {
+    let remove = removeTask(1);
+    expect(remove.length).toEqual(1);
+    expect(list.childNodes.length).toEqual(1);
+    let removeAnother = removeTask(0);
+    expect(removeAnother.length).toEqual(0);
+    expect(list.childNodes.length).toEqual(0);
+    expect(getItemSpy).toHaveBeenCalled();
+    expect(setItemSpy).toHaveBeenCalled();
+  });
 });
