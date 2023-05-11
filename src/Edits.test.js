@@ -28,5 +28,20 @@ describe('Todo list utilities', () => {
       expect(setItemSpy).toHaveBeenCalled();
     });
 
- 
+    it('Complete task', () => {
+      expect(checkTaskDone({ description: 'dog', status: 'completed' })).toEqual('uncompleted');
+      expect(checkTaskDone({ description: "cat", status: "uncompleted" })).toEqual(
+        "completed"
+      );
+  
+      expect(setItemSpy).toHaveBeenCalled();
+    });
+  
+    it('Clear completed', () => {
+      const tasks = clearTasks();
+      const filteredTask = tasks.filtered;
+      const originalList = tasks.list;
+      expect(filteredTask).toBeLessThan(originalList);
+      expect(setItemSpy).toHaveBeenCalled();
+    });
 });
