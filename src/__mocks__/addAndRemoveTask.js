@@ -1,26 +1,24 @@
 const addTask = (item) => {
-  const tasks = [];
+  const lists = localStorage.getItem("toDoList");
+  const get = JSON.parse(lists);
+  let tasks = [];
+  if (get) {
+    tasks = get;
+  }
   tasks.push({
     description: item,
     completed: false,
     index: tasks.length,
   });
+      const list = document.getElementById("list");
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `${item}`;
+      list.appendChild(listItem);
+
   localStorage.setItem('toDoList', JSON.stringify(tasks));
   return tasks;
 };
 
-const removeTask = (indexNo) => {
-  const tasks = [
-    {
-      description: 'cat',
-      completed: false,
-      index: 0,
-    },
-  ];
-  tasks.splice(indexNo, 1);
-  localStorage.setItem('toDoList', JSON.stringify(tasks));
-  return tasks;
-};
 
 exports.addTask = addTask;
-exports.removeTask = removeTask;
+
