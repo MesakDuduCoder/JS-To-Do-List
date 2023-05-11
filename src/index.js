@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import './style.css';
-import './modules/AddTask.js';
-import { clearTasks } from './modules/Checkbox.js';
+import './AddTask.js';
+import { clearTasks } from './Edits.js';
 
 function component() {
   const demo = document.getElementById('Demo');
@@ -28,9 +28,11 @@ function component() {
   const clearCompleted = document.createElement('button');
   clearCompleted.id = 'remove';
   clearCompleted.innerHTML = 'Clear all completed';
-  clearCompleted.onclick = clearTasks;
   remove.className = 'list-item-2';
   remove.style = 'justify-content: center';
+  clearCompleted.addEventListener('click', (e) => {
+    clearTasks();
+  });
   remove.appendChild(clearCompleted);
 }
 

@@ -18,9 +18,8 @@ input::placeholder {
 .List {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
   width: 100%;
-  margin-left: 50px;
+  max-width: 1200px;
 }
 
 .list {
@@ -29,6 +28,7 @@ input::placeholder {
   border-radius: 3px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
   width: 100%;
+  min-width: 300px;
   display: none;
   margin: 0;
 }
@@ -41,6 +41,8 @@ input::placeholder {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  min-width: 300px;
 }
 
 .list-item-2 {
@@ -51,6 +53,8 @@ input::placeholder {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  min-width: 300px;
 }
 
 #Add-to-list {
@@ -64,7 +68,7 @@ input::placeholder {
 
 #add-task {
   height: 45px;
-  width: 400px;
+  min-width: 250px;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
@@ -160,7 +164,7 @@ input::placeholder {
 
 #edit {
   height: 45px;
-  width: 400px;
+  min-width: 250px;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
