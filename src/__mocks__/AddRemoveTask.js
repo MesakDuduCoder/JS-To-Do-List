@@ -1,9 +1,9 @@
 const saveToStorage = (item) => {
-  localStorage.setItem("toDoList", JSON.stringify(item));
+  localStorage.setItem('toDoList', JSON.stringify(item));
 };
 
 const getFromStorage = () => {
-  const lists = localStorage.getItem("toDoList");
+  const lists = localStorage.getItem('toDoList');
   const get = JSON.parse(lists);
   let tasks = [];
   if (get) {
@@ -13,7 +13,7 @@ const getFromStorage = () => {
 };
 
 const addTask = (item) => {
-  let tasks = getFromStorage();
+  const tasks = getFromStorage();
   tasks.push({
     description: item,
     completed: false,
@@ -29,7 +29,7 @@ const addTask = (item) => {
 };
 
 const removeTask = (indexNo) => {
-  let tasks = getFromStorage();
+  const tasks = getFromStorage();
 
   tasks.splice(indexNo, 1);
   const list = document.getElementById('list');

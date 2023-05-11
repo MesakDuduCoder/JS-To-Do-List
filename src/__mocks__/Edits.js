@@ -1,21 +1,21 @@
 const saveToStorage = (item) => {
-  localStorage.setItem("toDoList", JSON.stringify(item));
+  localStorage.setItem('toDoList', JSON.stringify(item));
 };
 
 const editItem = (item) => {
-  const writeEdit = document.getElementById("toEdit");
-  const replacer = document.getElementById("edit");
+  const writeEdit = document.getElementById('toEdit');
+  const replacer = document.getElementById('edit');
   replacer.value = item;
-  writeEdit.innerHTML = "";
+  writeEdit.innerHTML = '';
   return { edit: replacer.value, original: writeEdit.innerHTML };
 };
 
 const saveEdit = (item) => {
-  let tasks = [{
-    description: "dog"
+  const tasks = [{
+    description: 'dog',
   }];
   let result = '';
-  const newValue = document.getElementById("edit");
+  const newValue = document.getElementById('edit');
   tasks.forEach((taskItem) => {
     if (item === taskItem.description) {
       taskItem.description = newValue.value;
@@ -27,23 +27,23 @@ const saveEdit = (item) => {
 };
 
 const checkTaskDone = (arg) => {
-  let tasks = [
+  const tasks = [
     {
-      description: "dog",
+      description: 'dog',
       completed: false,
-      index: 0
+      index: 0,
     },
     {
-      description: "cat",
+      description: 'cat',
       completed: true,
-      index: 1
+      index: 1,
     },
   ];
-  const description = arg.description;
-  const status = arg.status;
+  const { description } = arg;
+  const { status } = arg;
   let result = '';
 
-  if (status === "completed") {
+  if (status === 'completed') {
     tasks.forEach((taskItem) => {
       if (taskItem.description === description) {
         result = 'uncompleted';
@@ -52,10 +52,10 @@ const checkTaskDone = (arg) => {
     });
   }
 
-  if (status === "uncompleted") {
+  if (status === 'uncompleted') {
     tasks.forEach((taskItem) => {
       if (taskItem.description === description) {
-        result = "completed";
+        result = 'completed';
         saveToStorage(tasks);
       }
     });
@@ -65,14 +65,14 @@ const checkTaskDone = (arg) => {
 };
 
 const clearTasks = () => {
-  let tasks = [
+  const tasks = [
     {
-      description: "dog",
+      description: 'dog',
       completed: false,
       index: 0,
     },
     {
-      description: "cat",
+      description: 'cat',
       completed: true,
       index: 1,
     },
@@ -89,4 +89,3 @@ exports.checkTaskDone = checkTaskDone;
 exports.clearTasks = clearTasks;
 exports.editItem = editItem;
 exports.saveEdit = saveEdit;
-

@@ -1,13 +1,13 @@
 import { editItem, saveEdit } from './Edits.js';
 import { addTask, removeTask } from './AddRemoveTask.js';
 import { checkTaskDone } from './CheckAndClear.js';
-import { getFromStorage, saveToStorage } from "./Storage.js";
+import { getFromStorage, saveToStorage } from './Storage.js';
 
 const toDoList = document.getElementById('to-do-list');
 toDoList.classList.add('list');
 
 export const display = () => {
-let tasks = getFromStorage();
+  const tasks = getFromStorage();
   if (tasks) {
     toDoList.innerHTML = '';
     toDoList.style.display = 'block';
@@ -41,7 +41,7 @@ let tasks = getFromStorage();
       saveBtn.className = 'edit-btn-save';
       saveBtn.innerHTML = '<p>Save</p>';
       saveBtn.style.display = 'none';
-      saveBtn.style.marginLeft = "auto";
+      saveBtn.style.marginLeft = 'auto';
 
       const editBtn = document.createElement('button');
       editBtn.className = 'edit-btn';
@@ -84,4 +84,3 @@ let tasks = getFromStorage();
     saveToStorage(tasks);
   }
 };
-
