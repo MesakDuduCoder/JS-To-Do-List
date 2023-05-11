@@ -50,8 +50,6 @@ export const display = () => {
 
       editBtn.addEventListener('click', (e) => {
         const item = e.currentTarget.parentNode.children[1];
-        console.log(item.innerHTML);
-        console.log(item);
         editBtn.style.display = 'none';
         saveBtn.style.display = '';
         editItem(item);

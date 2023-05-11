@@ -1,5 +1,5 @@
 jest.mock('./addAndRemoveTask');
-const { addTask, removeTask } = require('./addAndRemoveTask');
+const { addTask, removeTask } = require('./addAndRemoveTask.js');
 
 describe('add items to Todo', () => {
   const setItemSpy = jest.spyOn(
@@ -7,14 +7,16 @@ describe('add items to Todo', () => {
     'setItem',
   );
   const getItemSpy = jest.spyOn(
-    Object.getPrototypeOf(localStorage), 
-    'getItem');
-  document.body.innerHTML = `<ul id='list'></ul>`;
+    Object.getPrototypeOf(localStorage),
+    'getItem',
+  );
+  document.body.innerHTML = '<ul id=\'list\'></ul>';
+  const list = document.getElementById('list');
   it('Add Item', () => {
-   let add = addTask("task one");
-    expect(list.childNodes.length).toEqual(1)
+    const add = addTask('task one');
+    expect(list.childNodes.length).toEqual(1);
     expect(add.length).toEqual(1);
-    let addAnother = addTask("task two");
+    const addAnother = addTask('task two');
     expect(addAnother.length).toEqual(2);
     expect(list.childNodes.length).toEqual(2);
     expect(getItemSpy).toHaveBeenCalled();
@@ -22,10 +24,10 @@ describe('add items to Todo', () => {
   });
 
   it('Remove Item', () => {
-    let remove = removeTask(1);
+    const remove = removeTask(1);
     expect(remove.length).toEqual(1);
     expect(list.childNodes.length).toEqual(1);
-    let removeAnother = removeTask(0);
+    const removeAnother = removeTask(0);
     expect(removeAnother.length).toEqual(0);
     expect(list.childNodes.length).toEqual(0);
     expect(getItemSpy).toHaveBeenCalled();

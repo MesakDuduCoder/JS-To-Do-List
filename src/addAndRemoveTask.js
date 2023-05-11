@@ -18,4 +18,3 @@ export const removeTask = (indexNo) => {
   tasks.splice(indexNo, 1);
   localStorage.setItem('toDoList', JSON.stringify(tasks));
 };
-
