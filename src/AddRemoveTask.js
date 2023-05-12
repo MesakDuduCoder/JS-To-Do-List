@@ -1,17 +1,17 @@
-import { getFromStorage, saveToStorage } from "./Storage.js";
+import { getFromStorage, saveToStorage } from './Storage.js';
 
 export const addTask = (description) => {
-  let tasks = getFromStorage;
+  const tasks = getFromStorage();
   tasks.push({
     description,
     completed: false,
     index: tasks.length,
   });
-  saveToStorage(tasks)
+  saveToStorage(tasks);
 };
 
 export const removeTask = (indexNo) => {
-  let tasks = getFromStorage;
+  const tasks = getFromStorage();
   tasks.splice(indexNo, 1);
   saveToStorage(tasks);
 };

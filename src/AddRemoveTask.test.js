@@ -1,5 +1,5 @@
-jest.mock('./addAndRemoveTask');
-const { addTask, removeTask } = require('./addAndRemoveTask.js');
+jest.mock('./AddRemoveTask');
+const { addTask, removeTask } = require('./AddRemoveTask.js');
 
 describe('add items to Todo', () => {
   const setItemSpy = jest.spyOn(

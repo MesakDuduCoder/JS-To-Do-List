@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import './style.css';
-import './AddTask.js';
-import { clearTasks } from './Edits.js';
+import { clearTasks } from './CheckAndClear.js';
+import { display } from './Display.js';
+import { addTask } from './AddRemoveTask.js';
 
 function component() {
   const demo = document.getElementById('Demo');
@@ -36,4 +37,28 @@ function component() {
   remove.appendChild(clearCompleted);
 }
 
+window.addEventListener('DOMContentLoaded', (e) => {
+  display();
+  const form = document.getElementById('add-task-form');
+
+  const handleAddTask = () => {
+    const taskInput = document.getElementById('add-task');
+    const description = taskInput.value;
+    addTask(description);
+    taskInput.value = '';
+  };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleAddTask();
+    display();
+  });
+
+  const enter = document.querySelector('#submit-task');
+  enter.addEventListener('click', (e) => {
+    e.preventDefault();
+    handleAddTask();
+    display();
+  });
+});
 document.body.appendChild(component());
